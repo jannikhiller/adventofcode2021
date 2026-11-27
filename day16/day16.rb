@@ -47,7 +47,8 @@ def parse_packet(packet)
   end
 end
 
-input = ARGF.read.strip.chars.map{|c| c.hex.to_s(2).rjust(4, "0").chars}.flatten
+input = ARGF.readline.chars.map{|c| c.hex.to_s(2).rjust(4, "0").chars}.flatten
 
-puts "Part 2: #{parse_packet(input).first}"
+parse_packet(input)
 puts "Part 1: #{$version}"
+puts "Part 2: #{parse_packet(input).first}"
